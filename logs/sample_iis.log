@@ -1,0 +1,21 @@
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2026-07-20 00:00:00
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) sc-status sc-substatus sc-win32-status time-taken
+2026-07-20 00:00:01 10.0.0.5 GET /home - 443 - 203.0.113.10 Mozilla/5.0+(Windows+NT+10.0;+Win64) 200 0 0 42
+2026-07-20 00:00:02 10.0.0.5 GET /api/products - 443 - 203.0.113.11 Mozilla/5.0+(Macintosh) 200 0 0 88
+2026-07-20 00:00:03 10.0.0.5 POST /api/login - 443 - 203.0.113.12 curl/8.4.0 200 0 0 120
+2026-07-20 00:00:05 10.0.0.5 GET /api/report - 443 - 203.0.113.13 Mozilla/5.0+(Windows+NT+10.0) 200 0 0 4200
+2026-07-20 00:00:06 10.0.0.5 GET /old-page - 443 - 203.0.113.14 Mozilla/5.0+(iPhone) 404 0 2 15
+2026-07-20 00:00:08 10.0.0.5 GET /admin/secret.aspx - 443 - 45.146.164.99 python-requests/2.31 404 0 2 9
+2026-07-20 00:00:10 10.0.0.5 POST /api/checkout - 443 - 203.0.113.15 Mozilla/5.0+(Android) 500 0 0 830
+2026-07-20 00:00:12 10.0.0.5 GET /api/report - 443 - 203.0.113.13 Mozilla/5.0+(Windows+NT+10.0) 500 0 0 5100
+2026-07-20 00:00:14 10.0.0.5 GET /home - 443 - 203.0.113.10 Mozilla/5.0+(Windows+NT+10.0;+Win64) 200 0 0 38
+2026-07-20 00:00:15 10.0.0.5 GET /api/search - 443 - 203.0.113.16 Mozilla/5.0+(X11;+Linux) 200 0 0 3500
+2026-07-20 00:00:17 10.0.0.5 GET /../../etc/passwd - 443 - 45.146.164.99 python-requests/2.31 400 0 0 5
+2026-07-20 00:00:19 10.0.0.5 POST /api/login - 443 - 45.146.164.99 python-requests/2.31 401 0 0 22
+2026-07-20 00:00:21 10.0.0.5 GET /favicon.ico - 443 - 203.0.113.11 Mozilla/5.0+(Macintosh) 200 0 0 7
+2026-07-20 00:00:23 10.0.0.5 GET /api/products - 443 - 203.0.113.11 Mozilla/5.0+(Macintosh) 200 0 0 95
+2026-07-20 00:00:25 10.0.0.5 POST /api/checkout - 443 - 203.0.113.15 Mozilla/5.0+(Android) 503 0 0 1200
+this-is-a-broken-line-with-wrong-field-count 200
+2026-07-20 00:00:28 10.0.0.5 GET /api/report - 443 - 203.0.113.13 Mozilla/5.0+(Windows+NT+10.0) 200 0 0 6100
