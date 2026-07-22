@@ -10,9 +10,10 @@ export default function RootLayout({ children }) {
         style={{
           margin: 0,
           fontFamily:
-            "system-ui, -apple-system, 'Segoe UI', Roboto, 'Apple SD Gothic Neo', sans-serif",
-          background: "#0f172a",
-          color: "#e2e8f0",
+            "'Segoe UI', system-ui, -apple-system, Roboto, 'Apple SD Gothic Neo', sans-serif",
+          background: "#0b1220",
+          color: "#e6edf3",
+          minHeight: "100vh",
         }}
       >
         {children}
