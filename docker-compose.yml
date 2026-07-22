@@ -1,0 +1,34 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.14.0
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false        # 로컬 데모 전용. 실배포에선 절대 끄지 말 것.
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: .
+    environment:
+      - ES_URL=http://elasticsearch:9200
+      - VISITOR_SALT=local-demo-salt         # 실배포에선 시크릿 매니저/환경변수로 주입
+    ports:
+      - "8001:8000"
+    depends_on:
+      elasticsearch:
+        condition: service_healthy            # ES가 healthy가 된 뒤에 API 기동
+
+  web:
+    build: ./web
+    environment:
+      - NEXT_PUBLIC_API_BASE=http://localhost:8001  # 브라우저(호스트)에서 호출하므로 localhost
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
