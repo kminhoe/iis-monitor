@@ -1,10 +1,5 @@
 """IIS W3C 확장 로그 파서.
 
-설계 메모(면접 talking point):
-- IIS는 UA 등 값 안의 공백을 '+'로 인코딩하므로 line.split()으로 안전하게 토큰 분리가 된다.
-- date/time은 W3C 스펙상 선택 필드라 없을 수 있다 -> 없으면 'NoneTNoneZ' 같은 쓰레기 대신 진짜 None을 넣는다.
-- 필드 수가 안 맞는 줄(공격 시도/깨진 줄)은 조용히 버리지 않고 개수를 세어 로그로 남긴다.
-- 방문자 식별은 IP+UA를 salt와 함께 해시. salt 없는 해시는 IPv4(32bit) 전수대입으로 역산되므로 salt 필수.
 """
 
 import hashlib
