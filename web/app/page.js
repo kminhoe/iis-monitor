@@ -29,11 +29,12 @@ const C = {
 };
 
 const STATUS_META = {
-  normal: { label: "정상", color: "#3fb950" },
-  slow: { label: "지연", color: "#d29922" },
-  warning: { label: "경고(4xx)", color: "#f0883e" },
-  error: { label: "오류(5xx)", color: "#f85149" },
-};
+   normal: { label: "정상", color: "#3fb950" },
+   slow: { label: "지연", color: "#d29922" },
+   warning: { label: "경고(4XX)", color: "#f0883e" },
+   error: { label: "오류(5XX)", color: "#f85149" },
+   timeout: { label: "타임아웃", color: "#c026d3" },
+   }
 
 export default function Dashboard() {
   const [summary, setSummary] = useState({});
@@ -184,6 +185,7 @@ export default function Dashboard() {
               <tr style={{ textAlign: "left", color: C.muted, fontSize: 12 }}>
                 <th style={th}>시각</th><th style={th}>메서드</th><th style={th}>경로</th>
                 <th style={th}>상태</th><th style={th}>응답(ms)</th><th style={th}>판정</th>
+                <th style={th}>쿼리</th>
               </tr>
             </thead>
             <tbody>
@@ -197,10 +199,12 @@ export default function Dashboard() {
                   <td style={{ ...td, color: STATUS_META[r.health_status]?.color, fontWeight: 600 }}>
                     {STATUS_META[r.health_status]?.label || r.health_status}
                   </td>
+                  <td style={td}>{r.query || "-"}</td> 
                 </tr>
+
               ))}
               {records.length === 0 && (
-                <tr><td style={td} colSpan={6}>표시할 로그가 없습니다.</td></tr>
+                <tr><td style={td} colSpan={7}>표시할 로그가 없습니다.</td></tr>
               )}
             </tbody>
           </table>
