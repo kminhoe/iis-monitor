@@ -22,6 +22,7 @@ INDEX_MAPPING = {
             "response_time_ms": {"type": "integer"},
             "health_status": {"type": "keyword"},
             "visitor_id": {"type": "keyword"},
+            "query": {"type": "keyword"},
         }
     }
 }
