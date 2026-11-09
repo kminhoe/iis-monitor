@@ -86,4 +86,4 @@ description: 면접연습. 인사팀장·현업 팀장·임원 3인이 번갈아
 같은 내용을 interview-report/YYYY-MM-DD.html 로도 만든다.
 외부 파일을 불러오지 않는 단일 HTML로 쓰고 <meta charset="utf-8">을 넣는다.
 맨 위에 큰 점수와 판정을 두고, 배점의 60%에 못 미친 항목은 붉게 표시한다.
-저장한 뒤 powershell -Command "Start-Process 'interview-report/YYYY-MM-DD.html'" 로 브라우저에 띄운다.
+저장한 뒤 open 'interview-report/YYYY-MM-DD.html' 로 브라우저에 띄운다.
